@@ -4,15 +4,6 @@ import numpy as np
 import face_recognition
 from datetime import datetime
 import mysql.connector
-print("list of students in database:")
-mydb=mysql.connector.connect(host="localhost",user="root",passwd="Athi2002!",database="students")
-mycursor=mydb.cursor()
-mycursor.execute("select * from listofstudents")
-result=mycursor.fetchall()
-for i in result:
-        print(i)
-
-
 
 path = 'C:\\Users\\User\\Desktop\\cV\\photos'
 images = []
