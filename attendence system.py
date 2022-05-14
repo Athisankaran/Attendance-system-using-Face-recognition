@@ -5,7 +5,7 @@ import face_recognition
 from datetime import datetime
 import mysql.connector
 
-path = 'C:\\Users\\User\\Desktop\\cV\\photos'
+path = 'C:\\Users\\User\\Desktop\\cV\\photos' #Enter the path where you have stored the preprocessing images
 images = []
 classNames = []
 sls=[]
@@ -32,7 +32,7 @@ def findEncodings(images):
 
 
 def markAttendance(name):
-    with open('C:\\Users\\User\\Desktop\\cV\\attendancesystem.csv','r+') as f:
+    with open('C:\\Users\\User\\Desktop\\cV\\attendancesystem.csv','r+') as f:  #Enter the path where you have already saved the csv file
         myDataList = f.readlines()
 #   	print(myDataList)
         nameList = []
@@ -50,7 +50,7 @@ def database(name):
         mycursor.execute("insert into students(name,status) values('"+name+"','Present')")
         
     
-mydb=mysql.connector.connect(host="localhost",user="root",passwd="yourpassword")
+mydb=mysql.connector.connect(host="localhost",user="root",passwd="______")  #Enter your MySQL localhost password in the empty space
 mycursor=mydb.cursor()
 
 mycursor.execute("create database demo")
